@@ -28,7 +28,8 @@ The notebooks containing our code and implementation are stored in the `notebook
 2. `preprocessing.ipynb`: code for cleaning and preprocessing original dataset (includes feature engineering) 
 3. `rnn.ipynb`: code for RNN models
 
-The datasets we used can be found here: https://drive.google.com/drive/folders/14UDaBowufW9BTIz6CvdKxtkL2l0c_DAB?usp=sharing
+The datasets we used can be found here: https://drive.google.com/drive/folders/14UDaBowufW9BTIz6CvdKxtkL2l0c_DAB?usp=sharing.
+
 There are 5 CSV files:
  1. `options_tsla.csv`: the original dataset on TSLA options. This dataset was cleaned and preprocessed to create the other datasets in the folder.
  2. `calls_data.csv`: feature data for TSLA calls.
