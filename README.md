@@ -19,10 +19,11 @@ The repository is organized as such:
 │	├── mlp_calls
 │	├── mlp_puts
 │	└── rnn_calls
-└── notebooks
-	├── mlp.ipynb
-	├── preprocessing.ipynb
-	└── rnn.ipynb
+├── notebooks
+│	├── mlp.ipynb
+│	├──preprocessing.ipynb
+│	└── rnn.ipynb
+└── plots
 ```
 
 The models that were built are stored in the `models` folder. There are 4 models:
@@ -36,6 +37,8 @@ The notebooks containing our code and implementation are stored in the `notebook
 1. `mlp.ipynb`: code for MLP models (includes initial model, hyperparameter tuning, and final model)
 2. `preprocessing.ipynb`: code for cleaning and preprocessing original dataset (includes feature engineering) 
 3. `rnn.ipynb`: code for RNN models (includes Simple RNN, LSTM, and GRU)
+
+Plots showing model performance during training can be found in the `plots` folder.
 
 The datasets we used can be found here: https://drive.google.com/drive/folders/14UDaBowufW9BTIz6CvdKxtkL2l0c_DAB?usp=sharing
 
@@ -65,4 +68,4 @@ For the MLP, training loss drops dramatically at epoch 1 before slowly decreasin
 
 Overall Loss on Test Data: 2,693
 
-[!image]
+[!image](plots/mlp.png)
