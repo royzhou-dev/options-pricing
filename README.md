@@ -23,7 +23,12 @@ The repository is organized as such:
 │	├── mlp.ipynb
 │	├──preprocessing.ipynb
 │	└── rnn.ipynb
-└── plots
+├── plots
+│	├── gru.png
+│	├── lstm.png
+│	├── mlp.png
+│	└── rnn.png
+└── README.md
 ```
 
 The models that were built are stored in the `models` folder. There are 4 models:
@@ -62,10 +67,38 @@ model = tf.keras.models.load_model('path/to/model')
 ```
 
 ## Results and Observations
-Results (including charts/tables) and your observations
-
-For the MLP, training loss drops dramatically at epoch 1 before slowly decreasing with each subsequent epoch. Validation loss varies, with it decreasing throughout model training, spiking at epoch 6 before returning to normal. 
+### Multilayer Perceptron
+Training loss drops dramatically at epoch 1 before slowly decreasing with each subsequent epoch. Validation loss varies, with it decreasing throughout model training, spiking at epoch 6 before returning to normal. 
 
 Overall Loss on Test Data: 2,693
 
-[!image](plots/mlp.png)
+![image](plots/mlp.png)
+
+### SimpleRNN
+Training loss decreases throughout training but stagnates around epoch 6. After this it starts to increase, indicating overfitting. A similar pattern can be seen in validation loss, which stagnates around epoch 4.
+
+Overall Loss on Test Data: 94,936
+
+![image](plots/rnn.png)
+
+### LSTM
+Training loss decreases throughout training but stagnates around epoch 10. After this it starts increases, again indicating overfitting in the model. The same pattern can be seen in the validation loss, which stagnates around epoch 11.
+
+Overall Loss on Test Data: 93,557
+
+![image](plots/lstm.png)
+
+### GRU
+Training Loss varies wildly but actually increases during  training. It is minimized around epoch 11, before starting to increase again. Validation loss varies wildly but is at its lowest around epoch 5.
+
+Overall Loss on Test Data: 86,404
+
+![image](plots/gru.png)
+
+### Conclusion
+The MLP performed better than all three varieties of RNNs, with a loss of 2,693 on test data, compared to 94,936 for Simple RNN, 93,557 for LSTM, and 86,404 for GRU RNNs. Even when using the epoch with the lowest training loss for the RNNs resulted in loss around 60,000 on test data, which is still suboptimal.
+
+This is likely because RNNs were designed to capture patterns over a period of time, with this being especially true for LSTMs which are intended to model long-term dependencies. However, given that our dataset contained only options exhancges from one trading day, there wasn’t enough data for sequential dependencies to be picked up.
+
+Additionally due to their complexity, RNNs have a tendency to overfit, especially when given limited data. We tried to reduce the number of epochs to combat this but the models still tended to overtrain after 8-10 epochs. Given these limitations, the simpler architecture of the MLP made it a more robust model.
+
