@@ -1,11 +1,14 @@
 # Options Price Forecasting
 
 ## Description
-The purpose of the models in this project is to predict the prices of TSLA options. A total of 4 models were trained to predict call prices:
+The goal of the project is to utilize deep learning techniques to predict option prices. Options pricing is a complex task that requires analyzing various market factors and dynamics. Traditional models often struggle to capture the complex relationships in the data, which is why we saw the need for deep learning models. 
+
+To tackle this problem, different deep learning models were trained:
 1. Multilayer Perceptron
-2. Simple Recurrent Neural Network (SimpleRNN)
+2. Recurrent Neural Network (RNN)
 3. Long Short-Term Memory (LSTM)
 4. Gated Recurrent Unit (GRU)
+
  
 ## Repository Structure
 The repository is organized as such:
