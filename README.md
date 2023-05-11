@@ -14,10 +14,11 @@ To tackle this problem, different deep learning models were trained:
 The repository is organized as such:
 ```
 ├── models
+│	├── gru_calls
+│	├── lstm_calls
 │	├── mlp_calls
 │	├── mlp_puts
-│	├── rnn_calls
-│	└── 
+│	└── rnn_calls
 └── notebooks
 	├── mlp.ipynb
 	├── preprocessing.ipynb
@@ -25,9 +26,11 @@ The repository is organized as such:
 ```
 
 The models that were built are stored in the `models` folder. There are 4 models:
-1. `mlp_calls`: multilayer perceptron model for predicting call prices.
-2. `mlp_puts`: multilayer perceptron model for predicting put prices.
-3. `rnn_calls`: recurrent neural network model for predicting call prices.
+1. `gru_calls`: GRU model for predicting call prices.
+2. `lstm_calls`: LSTM model for predicting call prices.
+3. `mlp_calls`: MLP model for predicting call prices.
+4. `mlp_puts`: MLP model for predicting put prices.
+5. `rnn_calls`: RNN model for predicting call prices.
 
 The notebooks containing our code and implementation are stored in the `notebooks` folder. There are 3 notebooks:
 1. `mlp.ipynb`: code for MLP models (includes initial model, hyperparameter tuning, and final model)
@@ -57,3 +60,9 @@ model = tf.keras.models.load_model('path/to/model')
 
 ## Results and Observations
 Results (including charts/tables) and your observations
+
+For the MLP, training loss drops dramatically at epoch 1 before slowly decreasing with each subsequent epoch. Validation loss varies, with it decreasing throughout model training, spiking at epoch 6 before returning to normal. 
+
+Overall Loss on Test Data: 2,693
+
+[!image]
